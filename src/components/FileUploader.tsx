@@ -117,7 +117,7 @@ const FileUploader = () => {
     setUploading(true);
     
     const filePath = `${Date.now()}-${file.name}`;
-    const { data, error } = await supabase.storage.from("uploads").upload(filePath, file);
+    const { error } = await supabase.storage.from("uploads").upload(filePath, file);
     
     if (error) {
       console.error("Upload error:", error);
